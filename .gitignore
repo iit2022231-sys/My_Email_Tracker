@@ -2,7 +2,7 @@
 .env
 .env.local
 .env.*.local
-
+test.txt
 # Dependencies
 node_modules/
 __pycache__/
