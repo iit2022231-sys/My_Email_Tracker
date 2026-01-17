@@ -1,6 +1,0 @@
-GEMINI_API_KEY=AIzaSyBgYmCo0aDhXagU79C7x0drlV_8Qsx8ArU
-            SMTP_SERVER=smtp.gmail.com
-            SMTP_PORT=587
-            EMAIL_USER=quantroadmap@gmail.com
-            EMAIL_PASSWORD=sbdn sqcs ypyh wosn
-            
