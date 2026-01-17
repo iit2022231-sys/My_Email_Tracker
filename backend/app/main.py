@@ -13,7 +13,7 @@ cors_origins = [
     "http://localhost:5173",
     "http://localhost:3000",
     "http://localhost:8000",
-    "https://my-email-tracker-4or3g7hqo-laxmi-narayans-projects-113826ee.vercel.app/"
+    "https://my-email-tracker-4or3g7hqo-laxmi-narayans-projects-113826ee.vercel.app"
 ]
 
 # Add production URLs if available
