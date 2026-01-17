@@ -13,11 +13,18 @@ class Settings(BaseSettings):
     EMAIL_PASSWORD: str = ""
     
     # Database Configuration
-    DATABASE_URL: str = "sqlite:///./email_tracker.db"
+    # Use PostgreSQL for production, SQLite for development
+    DATABASE_URL: str = os.getenv(
+        "DATABASE_URL", 
+        "sqlite:///./email_tracker.db"
+    )
+    
+    # Frontend URL for CORS
+    FRONTEND_URL: str = os.getenv("FRONTEND_URL", "")
     
     # App Configuration
-    DEBUG: bool = True
-
+    DEBUG: bool = False
+    
     class Config:
         env_file = ".env"
         case_sensitive = True

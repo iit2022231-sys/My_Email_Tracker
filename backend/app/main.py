@@ -7,9 +7,21 @@ from app.core.database import create_tables
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="AI HR Automator")
+
+# CORS configuration
+cors_origins = [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "http://localhost:8000",
+]
+
+# Add production URLs if available
+if settings.FRONTEND_URL and settings.FRONTEND_URL not in cors_origins:
+    cors_origins.append(settings.FRONTEND_URL)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
@@ -41,3 +53,7 @@ async def startup_event():
     create_tables()
     # Start the background task
     # asyncio.create_task(reply_checker_worker())
+
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
